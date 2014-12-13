@@ -5,34 +5,38 @@ using namespace std;
 #include "TaxVisitor.h"
 #include "TaxHolidayVisitor.h"
 #include "Food.h"
+#include "TaxVisitorFactory.h"
+#include "PrintVisitor.h"
 int main()
 {
-	Necessity milk(7000);
-	Necessity egg(2000);
+	Tobacco Tri_Five(30000);//3 so nam
 	Liquor volka(600000);
-	Tobacco baconmeo(20000);
-	TaxVisitor tax;
-	TaxHolidayVisitor taxholiday;
-	cout << "Milk price with no tax = " << milk.getPrice() << endl;
-	cout << "Egg price with no tax = " << egg.getPrice() << endl;
-	cout << "Volka price with no tax = " << volka.getPrice() << endl;
-	cout << "Baconmeo price with no tax = " << baconmeo.getPrice() << endl;
+	Tobacco Tri_Cat(20000);// thuoc la ba con meo
+	Necessity Cocacola(5000);
 
-	cout << endl;
-	cout << "Price with Tax :\n";
-	cout << "Milk " << milk.accept(tax)<<endl;
-	cout << "Egg " << egg.accept(tax)<<endl;
-	cout << "Volka " << volka.accept(tax)<<endl;
-	cout << "Baconmeo " << baconmeo.accept(tax)<<endl;
-
-	cout << endl;
-
-	cout << "Price with tax on Holiday \n";
-	cout << "Milk " << milk.accept(taxholiday) << endl;
-	cout << "Egg " << egg.accept(taxholiday) << endl;
-	cout << "Volka " << volka.accept(taxholiday) << endl;
-	cout << "Baconmeo " << baconmeo.accept(taxholiday) << endl;
+	Necessity* Dish1 = new Food(100000,"chicken with lemon leaf eat with sticky rice ");
+	Necessity* Dish2 = new Food(30000, "Instant noodle with fish ");
+	Necessity* Dish3 = new Food(10000, "Special peanut with pepper ");
+	cout << "Is today Holiday ?"
+		<< "1. Yes"
+		<< "2. No";
+	int choice;
+	cin >> choice;
+	TaxVisitorFactory VisitorFACTORY;
+	Visitor* tax = VisitorFACTORY.CreateTaxVisitor(choice);
  
+
+	cout << "----------------------------\n"
+		<< "Convenience store \n"
+		<< "Tri_Five cigarette     " << Tri_Five.accept(*tax) << endl
+		<< "Tri_Cat cigarette     " << Tri_Cat.accept(*tax) << endl
+		<< "Cocacola   " << Cocacola.accept(*tax) << endl
+		<< "-----------------------------------\n";
+
+	
+	
+	
+
 
 	/*
 
