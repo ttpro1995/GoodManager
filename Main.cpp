@@ -17,9 +17,9 @@ int main()
 	Necessity* Dish1 = new Food(100000,"chicken with lemon leaf eat with sticky rice ");
 	Necessity* Dish2 = new Food(30000, "Instant noodle with fish ");
 	Necessity* Dish3 = new Food(10000, "Special peanut with pepper ");
-	cout << "Is today Holiday ?"
-		<< "1. Yes"
-		<< "2. No";
+	cout << "Is today Holiday ?\n"
+		<< "1. Yes\n"
+		<< "0. No\n";
 	int choice;
 	cin >> choice;
 	TaxVisitorFactory VisitorFACTORY;
