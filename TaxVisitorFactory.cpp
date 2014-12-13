@@ -1,5 +1,5 @@
 #include "TaxVisitorFactory.h"
-
+//This source code is avaiable at my github account https://github.com/ttpro1995/GoodManager
 
 TaxVisitorFactory::TaxVisitorFactory()
 {

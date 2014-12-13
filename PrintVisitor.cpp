@@ -1,7 +1,7 @@
 #include "PrintVisitor.h"
 #include <iostream>
 using namespace std;
-
+//This source code is avaiable at my github account https://github.com/ttpro1995/GoodManager
 PrintVisitor::PrintVisitor()
 {
 }
@@ -27,12 +27,12 @@ double ::PrintVisitor::visit(Liquor& good)
 
 double ::PrintVisitor::visit(Food& good) 
 {
-	cout << good.getDescription() << endl;
+	cout << good.getDescription() ;
 	return 0;
 }
 
 double ::PrintVisitor::visit(FirstAid& good) 
 {
-	cout << good.getDescription() << endl;
+	cout << good.getDescription() ;
 	return 0;
 }

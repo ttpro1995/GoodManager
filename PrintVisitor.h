@@ -1,5 +1,6 @@
 #pragma once
 #include "Visitor.h"
+//This source code is avaiable at my github account https://github.com/ttpro1995/GoodManager
 class PrintVisitor :
 	public Visitor
 {
